@@ -20,6 +20,15 @@ function convertToWord(letter) {
   return "Scissors";
 }
 
+function result(userScore, computerScore) {
+  const final = document.getElementById("action-message");
+  if (userScore == 5) {
+    final.innerHTML = "You won!"
+  } else if (computerScore == 5) {
+    final.innerHTML = "You lost!"
+  }
+}
+
 function win(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
   const smallCompWord = "comp".fontsize(3).sup();
@@ -29,10 +38,9 @@ function win(userChoice, computerChoice) {
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`
   userChoice_div.classList.add('green-glow');
-  setTimeout(() => userChoice_div.classList.remove('green-glow'), 300)
+  setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
+  result(userScore, computerScore);
 }
-
-
 
 function lose(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
@@ -44,6 +52,7 @@ function lose(userChoice, computerChoice) {
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses ${convertToWord(computerChoice)}${smallCompWord}. You loses!`
   userChoice_div.classList.add('red-glow');
   setTimeout(() => userChoice_div.classList.remove('red-glow'), 300)
+  result(userScore, computerScore);
 }
 
 function draw(userChoice, computerChoice) {
@@ -53,6 +62,7 @@ function draw(userChoice, computerChoice) {
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallCompWord}. It's a draw.`
   userChoice_div.classList.add('grey-glow');
   setTimeout(() => userChoice_div.classList.remove('grey-glow'), 300)
+  result(userScore, computerScore);
 }
 
 function game(userChoice) {
@@ -71,12 +81,8 @@ function game(userChoice) {
     default:
       draw(userChoice, computerChoice);
       break;
-
   }
-
 }
-
-
 
 function main() {
   rock_div.addEventListener('click', function() {
