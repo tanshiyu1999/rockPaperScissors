@@ -4,11 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Rock Paper Scissors Game</title>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-
   <header>
     <h1> Rock Paper Scissors </h1>
   </header>
@@ -24,12 +23,19 @@
   </div>
 
   <div class="choices">
-    <div class="choice">
-      <img src="rock.png" alt="">
+    <div id="r" class="choice">
+      <img class="img-size" src="images/rock.png" alt="">
     </div>
-
+    <div id="p" class="choice">
+      <img class="img-size" src="images/paper.png" alt="">
+    </div>
+    <div id="s" class="choice">
+      <img class="img-size" src="images/scissors.png" alt="">
+    </div>
   </div>
 
+  <p id="action-message">Make your move</p>
+  <script src="app.js" charset="utf-8"></script>
 </body>
 
 </html>
