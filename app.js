@@ -20,14 +20,6 @@ function convertToWord(letter) {
   return "Scissors";
 }
 
-function result(userScore, computerScore) {
-  const final = document.getElementById("action-message");
-  if (userScore == 5) {
-    final.innerHTML = "You won!"
-  } else if (computerScore == 5) {
-    final.innerHTML = "You lost!"
-  }
-}
 
 function win(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sup();
